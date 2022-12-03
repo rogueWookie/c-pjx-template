@@ -11,7 +11,8 @@ INC_DIR := $(shell find $(SRC_DIR) -type d)
 INC_FLG := $(addprefix -I,$(INC_DIR))
 
 LKD_FLG ?= -lz -lpthread
-CPP_FLG ?= $(INC_FLG) -MMD -MP -Werror -Wall -Wextra
+CPP_FLG ?= $(INC_FLG) -MMD -MP
+
 $(BLD_DIR)/$(EXE): $(OBJ)
 	$(CC) $(OBJ) -o $@ $(LKD_FLG)
 
